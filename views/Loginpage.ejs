@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suraj Rajput </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+
+        /* stat */
+
+        body {
+            background: rgba(170, 76, 203, 0.8);
+            display: flex;
+            background-size: contain;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.1);
+            display: flex;
+            max-width: 1000px;
+        
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .left-panel {
+
+       
+            position: relative;
+            flex: 1;
+
+            background: url(' https://i.pinimg.com/736x/c4/75/09/c47509490d73229a59af5abd02b94891.jpg');
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+            padding: 30px;
+        }
+
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+            z-index: 1;
+        }
+
+        .header-buttons {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons h3 {
+            font-weight: 600;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .btn-dark {
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .profile {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .profile-title {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .arrow-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .arrow-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .right-panel {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .language-dropdown {
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .login-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password a {
+            color: #666;
+            font-size: 14px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .google-btn {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .google-icon {
+            margin-right: 10px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 25;
+            margin-bottom: 20px;
+        }
+
+        .signup-text {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .signup-text a {
+            color: #f44336;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            color: #666;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Explicitly add cursor pointer to all buttons and interactive elements */
+        button,
+        a,
+        select,
+        input[type="submit"],
+        input[type="button"] {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-panel {
+                display: none;
+            }
+
+            .right-panel {
+                padding: 30px 20px;
+            }
+        }
+ 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+       
+        <div class="right-panel">
+         
+            <div class="brand-section">
+                <div class="brand-name">UISOCIAL</div>
+                <select class="language-dropdown">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                    <option value="es">ES</option>
+                </select>
+            </div>
+
+          
+            <div class="login-content">
+                <div class="login-header">
+                    <h1>Hi Designer</h1>
+                    <p>Welcome to UISOCIAL</p>
+                </div>
+
+                <form method="post" action="/login">
+                    <div class="form-group">
+                        <input type="text" required  name="username" class="form-control" placeholder="username">
+                    </div>
+
+                    <div class="form-group">
+                        <input name="password" required type="password" class="form-control" placeholder="Password">
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="/profile">Forgot password?</a>
+                    </div>
+
+                    <button type="button" class="google-btn">
+                        <img src=" " alt="Google" class="google-icon"> Login with Google
+                    </button>
+
+                    <button type="submit" style="cursor: pointer;" class="login-btn">Login</button>
+
+                    <div class="signup-text">
+                        Don't have an account? <a href="/">Register here</a>
+                    </div>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="left-panel">
+            <div class="dark-overlay"></div>
+ 
+            <div class="header-buttons">
+                <h3>Selected Works</h3>
+                <div>
+                    <button style="cursor: pointer;" class="btn btn-outline ">Sign Up</button>
+                    <button style="cursor: pointer;" class="btn btn-dark">Join Us</button>
+                </div>
+            </div>
+
+           
+            <div class="profile">
+                <img src="https://i.pinimg.com/736x/ab/4f/97/ab4f970145a5bb9fd39adf12ff4fdffa.jpg" alt="Profile"
+                    class="profile-image">
+                <div class="profile-info">
+                    <div class="profile-name">Andrew.ui</div>
+                    <div class="profile-title">UI & Illustration</div>
+                </div>
+                <div class="arrow-buttons">
+                    <button class="arrow-btn">←</button>
+                    <button class="arrow-btn">→</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
