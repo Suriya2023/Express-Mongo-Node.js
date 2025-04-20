@@ -5,15 +5,17 @@ var router = express.Router()
 mongoose.connect('mongodb://127.0.0.1:27017/register')
 
 
-// Create User Login Schema
+router.get('/', function (req, res) {
+  res.send("This is index page")
+})
+
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  // bio: { type: String, required: true },
+  password: { type: String },
+  bio: { type: String }
 })
 
 userSchema.plugin(plm)
-//end
 
 
 
